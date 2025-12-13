@@ -1,0 +1,67 @@
+[
+  {
+    "id": "sumer",
+    "name": "Sumerians",
+    "period": "4500 – 1900 BCE",
+    "location": "Mesopotamia (Modern Iraq)",
+    "dailyLife": "Farmers, scribes, and priests living in the first true cities.",
+    "contributions": ["The Wheel", "Writing (Cuneiform)", "60-second minute"],
+    "facts": [
+      "They invented the first schools.",
+      "They brewed the first known beer recipes.",
+      "Their cities had advanced sewer systems."
+    ]
+  },
+  {
+    "id": "early_human",
+    "name": "Early Hominids",
+    "period": "2 Million Years Ago",
+    "location": "Global Migration",
+    "dailyLife": "Nomadic hunter-gatherers following seasons and herds.",
+    "contributions": ["Fire Control", "Stone Tools", "Social Cooperation"],
+    "facts": [
+      "They learned to shape stone by chipping it carefully.",
+      "They cared for their sick and elderly.",
+      "They were the first explorers."
+    ]
+  },
+  {
+    "id": "greece",
+    "name": "Ancient Greeks",
+    "period": "800 – 146 BCE",
+    "location": "Greece & Mediterranean",
+    "dailyLife": "Citizens debating in agoras, watching plays, and trading.",
+    "contributions": ["Democracy", "Philosophy", "Olympics"],
+    "facts": [
+      "They valued physical fitness as much as mental sharpness.",
+      "Their pottery styles changed like modern fashion trends.",
+      "They invented the alarm clock (water clock)."
+    ]
+  },
+  {
+    "id": "inca",
+    "name": "Inca Empire",
+    "period": "1438 – 1533 CE",
+    "location": "Andes Mountains (South America)",
+    "dailyLife": "Living in high-altitude stone cities, farming terraces.",
+    "contributions": ["Freeze-drying food", "Complex Road Systems", "Brain Surgery"],
+    "facts": [
+      "They didn't use wheels for transport because of the steep mountains.",
+      "They used knotted strings called Quipu to keep records.",
+      "They built earthquake-resistant stone walls without mortar."
+    ]
+  },
+  {
+    "id": "egypt",
+    "name": "Ancient Egyptians",
+    "period": "3100 – 30 BCE",
+    "location": "Nile River Valley",
+    "dailyLife": "Farming the Nile banks, building monuments, praising gods.",
+    "contributions": ["Paper (Papyrus)", "Calendar", "Medicine"],
+    "facts": [
+      "Both men and women wore makeup for sun protection.",
+      "They loved board games like Senet.",
+      "Cats were considered sacred animals."
+    ]
+  }
+]
