@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cuneiform",
+    "name": "Cuneiform",
+    "civilizationId": "sumer",
+    "symbols": [
+      { "char": "img/symbol1.png", "meaning": "Star / God" },
+      { "char": "img/symbol2.png", "meaning": "Water" },
+      { "char": "img/symbol3.png", "meaning": "Grain" }
+    ],
+    "sampleText": "To know the past is to plant the seeds of the future.",
+    "lossImpact": "If we couldn't read this, 3,000 years of history—laws, recipes, and stories like Gilgamesh—would be silent forever."
+  },
+  {
+    "id": "hieroglyphs",
+    "name": "Hieroglyphics",
+    "civilizationId": "egypt",
+    "symbols": [
+      { "char": "img/symbol4.png", "meaning": "Life (Ankh)" },
+      { "char": "img/symbol5.png", "meaning": "Sun (Ra)" },
+      { "char": "img/symbol6.png", "meaning": "River" }
+    ],
+    "sampleText": "The river brings life to the desert and strength to the people.",
+    "lossImpact": "We would see the pyramids as just piles of stone, not the gateways to eternity they were meant to be."
+  }
+]
