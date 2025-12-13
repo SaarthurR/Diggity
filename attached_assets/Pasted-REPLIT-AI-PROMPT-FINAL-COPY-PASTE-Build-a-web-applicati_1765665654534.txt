@@ -1,0 +1,118 @@
+REPLIT AI PROMPT (FINAL – COPY & PASTE)
+
+Build a web application called “Diggity – The Digital Archaeologist” based on the theme:
+“Understanding Yesterday to Protect Tomorrow.”
+
+Core Purpose (Very Important):
+Diggity exists to protect human identity by preserving cultures, languages, and civilizations before they are lost. The app should constantly remind users that understanding history leads to respect, protection, and better choices for the future.
+
+High-Level Goal:
+Create a digital archaeology experience where users can analyze artifacts, decode ancient languages, explore civilizations, and clearly see the social impact of preserving history.
+
+Functional Requirements
+1. Home / Mission Page
+
+Display the theme prominently
+
+Include a short mission statement:
+
+“Diggity helps humanity understand yesterday so we can protect tomorrow.”
+
+Explain that lost history leads to lost identity
+
+2. Artifact Analysis Module
+
+Allow users to:
+
+Select an artifact type (tablet, tool, pottery, statue)
+
+Select a discovery location (Egypt, Indus Valley, Mesopotamia, Maya)
+
+Simulate analysis results:
+
+Estimated age
+
+Material
+
+Purpose
+
+Explain why understanding the artifact matters before touching or moving it
+
+3. Ancient Language Decoder
+
+Let users select ancient symbols or scripts
+
+Translate symbols into modern meaning (simulated using data)
+
+Add a section called “What Would Be Lost If We Didn’t Understand This?”
+
+4. Civilization Explorer
+
+Match the artifact and language to a civilization
+
+Display:
+
+Civilization name
+
+Time period
+
+Daily life facts
+
+Cultural contributions still used today
+
+5. Protect Tomorrow – Social Impact Section
+
+Clearly explain how understanding this civilization:
+
+Preserves cultural identity
+
+Protects endangered languages
+
+Supports global heritage efforts like UNESCO
+
+Include a message:
+
+“When people understand history, they are more likely to protect it.”
+
+6. Story Mode (Human-Centered Output)
+
+Generate a short story that connects:
+
+The artifact
+
+The language
+
+The civilization
+
+The future impact on humanity
+
+Technical Constraints
+
+Use HTML, CSS, and JavaScript
+
+Do NOT use real AI APIs
+
+Simulate intelligence using:
+
+JSON data files
+
+JavaScript logic
+
+Keep UI simple, readable, and kid-friendly
+
+Data Structure
+
+Use JSON files for:
+
+Artifacts
+
+Languages
+
+Civilizations
+
+Required Footer (Must Include)
+
+“Understanding Yesterday to Protect Tomorrow.
+Technology can preserve what makes us human.”
+
+Build this as a working prototype suitable for a FIRST LEGO League Innovation Project demonstration, with emphasis on ethics, cultural preservation, and long-term social impact.
