@@ -10,7 +10,6 @@ import Decoder from "@/pages/Decoder";
 import Civilizations from "@/pages/Civilizations";
 import Impact from "@/pages/Impact";
 import Story from "@/pages/Story";
-import Analyzer from "@/pages/Analyzer";
 
 function Router() {
   return (
@@ -19,7 +18,6 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/mission" component={Home} />
         <Route path="/analyze" component={Analysis} />
-        <Route path="/image-analyzer" component={Analyzer} />
         <Route path="/decoder" component={Decoder} />
         <Route path="/civilizations" component={Civilizations} />
         <Route path="/impact" component={Impact} />
