@@ -11,7 +11,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navItems = [
     { href: "/", label: "Mission", icon: Globe },
     { href: "/analyze", label: "Analyze", icon: Scan },
-    { href: "/image-analyzer", label: "Img Scan", icon: Camera },
     { href: "/decoder", label: "Decoder", icon: History },
     { href: "/civilizations", label: "Civilizations", icon: Map },
     { href: "/story", label: "Story Mode", icon: ScrollText },
