@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +10,13 @@ import civsData from "@/data/civilizations.json";
 export default function Civilizations() {
   const { analyzedCivilization, analyzedArtifact, clearAnalysis } = useAnalysis();
   const [selectedCivId, setSelectedCivId] = useState<string | null>(null);
+
+  // Auto-select civilization if coming from analysis
+  useEffect(() => {
+    if (analyzedCivilization && !selectedCivId) {
+      setSelectedCivId(analyzedCivilization.id);
+    }
+  }, [analyzedCivilization, selectedCivId]);
 
   // Use analyzed civilization if available, otherwise allow manual selection
   const displayCiv = analyzedCivilization || civsData.find(c => c.id === selectedCivId);
