@@ -6,6 +6,7 @@ import { AnalysisProvider } from "@/context/AnalysisContext";
 import Layout from "@/components/layout/Layout";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import Mission from "@/pages/Mission";
 import Analysis from "@/pages/Analysis";
 import Decoder from "@/pages/Decoder";
 import Civilizations from "@/pages/Civilizations";
@@ -18,7 +19,7 @@ function Router() {
     <Layout>
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/mission" component={Home} />
+        <Route path="/mission" component={Mission} />
         <Route path="/analyze" component={Analysis} />
         <Route path="/decoder" component={Decoder} />
         <Route path="/civilizations" component={Civilizations} />
