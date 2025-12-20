@@ -1,0 +1,78 @@
+[
+  {
+    "id": "cuneiform",
+    "name": "Cuneiform Script",
+    "civilizationId": "sumer",
+    "scriptOrigin": "Ancient Mesopotamia (c. 3100 BCE)",
+    "scriptSample": "𒀭 𒀀 𒊺",
+    "vocabulary": [
+      {
+        "symbol": "𒀭",
+        "meaning": "Dingir (god/deity)",
+        "pronunciation": "DING-ir",
+        "usage": "Used in prayers and religious texts to reference divine beings"
+      },
+      {
+        "symbol": "𒀀",
+        "meaning": "A (water/flow)",
+        "pronunciation": "AH",
+        "usage": "Essential in agricultural records describing irrigation and water rights"
+      },
+      {
+        "symbol": "𒊺",
+        "meaning": "Ŝe (grain/barley)",
+        "pronunciation": "SHAY",
+        "usage": "Appears in inventory tablets recording grain storage and taxation"
+      },
+      {
+        "symbol": "𒉡",
+        "meaning": "Lugal (king/ruler)",
+        "pronunciation": "loo-GAHL",
+        "usage": "Found in administrative seals and royal decrees"
+      }
+    ],
+    "usageExample": {
+      "context": "Ancient Receipt for Grain Delivery",
+      "text": "100 𒊺 (100 measures of grain) delivered by Farmer Enuma to King's warehouse",
+      "meaning": "This type of record helped manage early economies and taxation systems"
+    }
+  },
+  {
+    "id": "hieroglyphs",
+    "name": "Egyptian Hieroglyphics",
+    "civilizationId": "egypt",
+    "scriptOrigin": "Ancient Egypt (c. 3200 BCE)",
+    "scriptSample": "☥ 𓇳 𓈗",
+    "vocabulary": [
+      {
+        "symbol": "☥",
+        "meaning": "Ankh (life/eternal)",
+        "pronunciation": "AHN-kuh",
+        "usage": "Sacred symbol representing eternal life, worn by gods and pharaohs"
+      },
+      {
+        "symbol": "𓇳",
+        "meaning": "Ra (sun/light)",
+        "pronunciation": "RAH",
+        "usage": "Central to solar theology and appears in temple inscriptions daily"
+      },
+      {
+        "symbol": "𓈗",
+        "meaning": "Nile (river/prosperity)",
+        "pronunciation": "NIL-uh",
+        "usage": "Critical in records of floods, harvests, and abundance"
+      },
+      {
+        "symbol": "𓂀",
+        "meaning": "Pharaoh/King",
+        "pronunciation": "FAH-roh",
+        "usage": "Used in royal decrees and tomb inscriptions to identify rulers"
+      }
+    ],
+    "usageExample": {
+      "context": "Temple Wall Inscription",
+      "text": "☥ Pharaoh blessed by 𓇳 with 𓈗 abundance for eternal 𓂀 rule",
+      "meaning": "This blessing formula appears on temple walls, connecting the pharaoh's divine right to the natural cycles of the Nile"
+    }
+  }
+]

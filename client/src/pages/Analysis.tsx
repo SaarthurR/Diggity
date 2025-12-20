@@ -9,8 +9,10 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowLeft, CheckCircle2, MapPin, Clock, Hammer, Upload, Camera, Search, AlertTriangle, ScanLine, ExternalLink } from "lucide-react";
 import { useAnalysis } from "@/context/AnalysisContext";
+import LanguageInsights from "@/components/LanguageInsights";
 import artifactsData from "@/data/artifacts.json";
 import civsData from "@/data/civilizations.json";
+import languageInsightsData from "@/data/language-insights.json";
 
 // Image Imports
 import tabletImg from "@assets/generated_images/ancient_clay_tablet_artifact.png";
@@ -379,6 +381,13 @@ export default function Analysis() {
                     </Button>
                   </div>
                 </div>
+
+                {/* Language Insights - Only if artifact has inscriptions */}
+                {matchedArtifact && (matchedArtifact as any).hasInscriptions && (matchedArtifact as any).languageId && (
+                  <LanguageInsights 
+                    languageData={languageInsightsData.find(lang => lang.id === (matchedArtifact as any).languageId)!}
+                  />
+                )}
 
               </motion.div>
             )}
