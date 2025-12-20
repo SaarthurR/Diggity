@@ -9,7 +9,9 @@
     "location": "Mesopotamia",
     "whyItMatters": "It documents the first written laws and trade deals. Without it, we wouldn't know how early cities organized themselves.",
     "civilizationId": "sumer",
-    "imageId": "tablet"
+    "imageId": "tablet",
+    "hasInscriptions": true,
+    "languageId": "cuneiform"
   },
   {
     "id": "tool",
@@ -21,7 +23,9 @@
     "location": "Great Rift Valley",
     "whyItMatters": "It shows the earliest spark of human engineering. It proves our ancestors could plan ahead and shape their world.",
     "civilizationId": "early_human",
-    "imageId": "tool"
+    "imageId": "tool",
+    "hasInscriptions": false,
+    "languageId": null
   },
   {
     "id": "pottery",
@@ -33,7 +37,9 @@
     "location": "Greece",
     "whyItMatters": "The artwork on it depicts daily life, myths, and fashion. It's a snapshot of a culture's soul frozen in time.",
     "civilizationId": "greece",
-    "imageId": "pottery"
+    "imageId": "pottery",
+    "hasInscriptions": false,
+    "languageId": null
   },
   {
     "id": "statue",
@@ -45,6 +51,8 @@
     "location": "Andes Mountains",
     "whyItMatters": "It reveals the spiritual beliefs and craftsmanship of a lost empire. Melting it down would destroy a people's history.",
     "civilizationId": "inca",
-    "imageId": "statue"
+    "imageId": "statue",
+    "hasInscriptions": false,
+    "languageId": null
   }
 ]
