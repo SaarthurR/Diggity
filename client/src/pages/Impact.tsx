@@ -165,6 +165,51 @@ export default function Impact() {
         </Card>
       </div>
 
+      {/* UNESCO Partnership */}
+      <div className="space-y-6">
+        <div className="text-center space-y-3">
+          <h2 className="text-2xl font-display font-bold text-foreground">Global Social Impact</h2>
+          <p className="text-muted-foreground">Aligned with UNESCO's mission for cultural preservation</p>
+        </div>
+        
+        <div className="p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 border border-blue-500/30 hover:border-blue-500/50 transition-all">
+          <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
+            <div className="flex-1">
+              <h3 className="text-2xl font-display font-bold mb-3 text-foreground">
+                UNESCO Decades for Indigenous Languages
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Diggity aligns with UNESCO's International Decade of Indigenous Languages (2022-2032), 
+                supporting the global effort to preserve linguistic diversity and prevent the extinction of 
+                endangered languages. By using AI-driven analysis and digital preservation, we're helping 
+                to document, decode, and protect indigenous languages before they disappear forever.
+              </p>
+              <p className="text-sm text-muted-foreground italic mb-6">
+                "Languages embody the unique worldviews and knowledge systems of peoples. When a language 
+                disappears, humanity loses invaluable cultural and scientific heritage." - UNESCO
+              </p>
+              <a 
+                href="https://www.unesco.org/en/decades/indigenous-languages" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/50 text-blue-400 hover:text-blue-300 transition-all font-mono text-sm font-bold uppercase tracking-wider"
+              >
+                Learn More About UNESCO Initiative
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6v12h12v-6m0-6h6m0 0V6m0 6L10 4" />
+                </svg>
+              </a>
+            </div>
+            <div className="w-full md:w-auto">
+              <div className="p-6 rounded-xl bg-card border border-blue-500/20 text-center">
+                <div className="text-4xl font-display font-bold text-blue-400 mb-2">2022-2032</div>
+                <p className="text-sm text-muted-foreground font-mono">International Decade of Indigenous Languages</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Call to Action */}
       <div className="p-8 rounded-2xl bg-primary/5 border border-primary/20 text-center space-y-4">
         <h3 className="text-2xl font-display font-bold text-primary">You Are the Digital Archaeologist</h3>
