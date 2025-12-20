@@ -1,12 +1,14 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "wouter";
 import Scanner from "@/components/Scanner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, CheckCircle2, MapPin, Clock, Hammer, Upload, Camera, Search, AlertTriangle, ScanLine } from "lucide-react";
+import { ArrowLeft, CheckCircle2, MapPin, Clock, Hammer, Upload, Camera, Search, AlertTriangle, ScanLine, ExternalLink } from "lucide-react";
+import { useAnalysis } from "@/context/AnalysisContext";
 import artifactsData from "@/data/artifacts.json";
 import civsData from "@/data/civilizations.json";
 
@@ -24,6 +26,9 @@ const imageMap: Record<string, string> = {
 };
 
 export default function Analysis() {
+  const [, navigate] = useLocation();
+  const { setAnalysisResult } = useAnalysis();
+  
   // Mode Selection: 'browse' (grid) or 'upload' (new scan)
   const [mode, setMode] = useState<"browse" | "upload">("upload");
 
@@ -79,7 +84,13 @@ export default function Analysis() {
       let baseConfidence = 85;
       if (condition === "intact") baseConfidence += 10;
       if (condition === "fragmented") baseConfidence -= 5;
-      setConfidence(Math.min(99, Math.floor(Math.random() * 5 + baseConfidence))); 
+      const finalConfidence = Math.min(99, Math.floor(Math.random() * 5 + baseConfidence));
+      setConfidence(finalConfidence);
+      
+      // Store in global context for Civilization Explorer
+      if (match && civ) {
+        setAnalysisResult(match as any, civ as any);
+      }
       
       setIsScanning(false);
       setScanComplete(true);
@@ -353,11 +364,19 @@ export default function Analysis() {
                   <div className="bg-blue-500/20 p-2 rounded-full">
                     <Hammer className="w-4 h-4 text-blue-400" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h4 className="font-bold text-sm mb-0.5">Civilization Match</h4>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-muted-foreground mb-3">
                       Identified features consistent with <span className="text-foreground font-medium">{matchedCiv?.name}</span> craftsmanship ({matchedCiv?.period}).
                     </p>
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="text-xs h-7 border-blue-500/30 hover:bg-blue-500/10"
+                      onClick={() => navigate("/civilizations")}
+                    >
+                      <ExternalLink className="w-3 h-3 mr-1" /> Explore Civilization
+                    </Button>
                   </div>
                 </div>
 
