@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { History, Scan, Globe, BookOpen, Menu, X, ScrollText, Map, Camera } from "lucide-react";
+import { History, Scan, Globe, BookOpen, Menu, X, ScrollText, Map, Camera, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -13,6 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { href: "/analyze", label: "Analyze", icon: Scan },
     { href: "/decoder", label: "Decoder", icon: History },
     { href: "/civilizations", label: "Civilizations", icon: Map },
+    { href: "/predictions", label: "Predict", icon: TrendingUp },
     { href: "/story", label: "Story Mode", icon: ScrollText },
     { href: "/impact", label: "Impact", icon: BookOpen },
   ];

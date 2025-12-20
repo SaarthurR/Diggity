@@ -11,6 +11,7 @@ import Decoder from "@/pages/Decoder";
 import Civilizations from "@/pages/Civilizations";
 import Impact from "@/pages/Impact";
 import Story from "@/pages/Story";
+import Predictions from "@/pages/Predictions";
 
 function Router() {
   return (
@@ -21,6 +22,7 @@ function Router() {
         <Route path="/analyze" component={Analysis} />
         <Route path="/decoder" component={Decoder} />
         <Route path="/civilizations" component={Civilizations} />
+        <Route path="/predictions" component={Predictions} />
         <Route path="/impact" component={Impact} />
         <Route path="/story" component={Story} />
         <Route component={NotFound} />
