@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Shield, History } from "lucide-react";
+import RobotExcavationPipeline from "@/components/RobotExcavationPipeline";
 import heroBg from "@assets/generated_images/digital_archaeology_interface_background.png";
 
 export default function Home() {
@@ -52,6 +53,11 @@ export default function Home() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* Robot Excavation Pipeline Section */}
+      <section className="py-12">
+        <RobotExcavationPipeline />
       </section>
 
       {/* Feature Grid */}
