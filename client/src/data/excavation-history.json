@@ -1,0 +1,65 @@
+[
+  {
+    "id": "exc_001",
+    "location": "Mesopotamia",
+    "artifactType": "Record",
+    "civilization": "sumer",
+    "year": 2019,
+    "depth": "2.3m",
+    "successRate": 0.95
+  },
+  {
+    "id": "exc_002",
+    "location": "Mesopotamia",
+    "artifactType": "Record",
+    "civilization": "sumer",
+    "year": 2020,
+    "depth": "2.1m",
+    "successRate": 0.92
+  },
+  {
+    "id": "exc_003",
+    "location": "Greece",
+    "artifactType": "Container",
+    "civilization": "greece",
+    "year": 2018,
+    "depth": "1.8m",
+    "successRate": 0.88
+  },
+  {
+    "id": "exc_004",
+    "location": "Greece",
+    "artifactType": "Container",
+    "civilization": "greece",
+    "year": 2021,
+    "depth": "1.9m",
+    "successRate": 0.91
+  },
+  {
+    "id": "exc_005",
+    "location": "Great Rift Valley",
+    "artifactType": "Tool",
+    "civilization": "early_human",
+    "year": 2017,
+    "depth": "5.2m",
+    "successRate": 0.78
+  },
+  {
+    "id": "exc_006",
+    "location": "Andes Mountains",
+    "artifactType": "Religious",
+    "civilization": "inca",
+    "year": 2019,
+    "depth": "1.5m",
+    "successRate": 0.89
+  },
+  {
+    "id": "exc_007",
+    "location": "Nile River Valley",
+    "artifactType": "Record",
+    "civilization": "egypt",
+    "year": 2020,
+    "depth": "2.7m",
+    "successRate": 0.93
+  }
+]
