@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Globe, Shield, History } from "lucide-react";
+import { ArrowRight, Globe, Shield, History, Search, Zap, Brain, Target } from "lucide-react";
 import RobotExcavationPipeline from "@/components/RobotExcavationPipeline";
 import heroBg from "@assets/generated_images/digital_archaeology_interface_background.png";
 
@@ -58,6 +58,115 @@ export default function Home() {
       {/* Robot Excavation Pipeline Section */}
       <section className="py-12">
         <RobotExcavationPipeline />
+      </section>
+
+      {/* Our Solution Section */}
+      <section className="space-y-8">
+        <div className="text-center space-y-3 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-white">Our Solution</h2>
+          <p className="text-lg text-muted-foreground">
+            A connected system for discovering, analyzing, and protecting history.
+          </p>
+        </div>
+
+        {/* The Problem */}
+        <div className="p-8 rounded-xl bg-card/50 border border-border/30 backdrop-blur-sm">
+          <h3 className="text-lg font-display font-bold mb-3 text-foreground">The Problem</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Archaeology is often fragmented — discovery, excavation, and analysis happen as disconnected steps, 
+            increasing the risk of damage and lost context. Without a unified approach, critical information 
+            vanishes in the gaps between processes.
+          </p>
+        </div>
+
+        {/* The Solution */}
+        <div className="p-8 rounded-xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/30 backdrop-blur-sm">
+          <h3 className="text-lg font-display font-bold mb-3 text-primary">The Solution</h3>
+          <p className="text-foreground leading-relaxed text-lg">
+            <span className="font-semibold">Diggity unifies archaeology into one data-driven system</span> where 
+            understanding happens before, during, and after excavation. Every step informs the next. 
+            Every artifact tells a story.
+          </p>
+        </div>
+
+        {/* How The System Works */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-display font-bold text-foreground">How the System Works</h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="p-6 rounded-lg bg-card border border-border/50 group hover:border-primary/50 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <Search className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="font-mono text-xs text-primary uppercase font-bold mb-1">Step 1</p>
+                  <p className="text-sm text-muted-foreground">
+                    A robot carefully discovers and extracts artifacts with precision
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-lg bg-card border border-border/50 group hover:border-secondary/50 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <Zap className="w-5 h-5 text-secondary" />
+                </div>
+                <div>
+                  <p className="font-mono text-xs text-secondary uppercase font-bold mb-1">Step 2</p>
+                  <p className="text-sm text-muted-foreground">
+                    A lightweight module captures critical data during excavation
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-lg bg-card border border-border/50 group hover:border-accent/50 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-accent/30 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <Brain className="w-5 h-5 text-accent-foreground" />
+                </div>
+                <div>
+                  <p className="font-mono text-xs text-accent-foreground uppercase font-bold mb-1">Step 3</p>
+                  <p className="text-sm text-muted-foreground">
+                    Digital analysis interprets artifacts and historical context
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-lg bg-card border border-border/50 group hover:border-green-500/50 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <Target className="w-5 h-5 text-green-500" />
+                </div>
+                <div>
+                  <p className="font-mono text-xs text-green-500 uppercase font-bold mb-1">Step 4</p>
+                  <p className="text-sm text-muted-foreground">
+                    Past discoveries inform future excavation decisions
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Core Principle */}
+        <div className="p-8 rounded-xl bg-card border border-primary/20 text-center">
+          <p className="text-xl font-display font-bold text-primary">
+            "Understand first. Act second."
+          </p>
+          <p className="text-sm text-muted-foreground mt-3">
+            Every decision is informed. Every action is intentional. This is how we protect history.
+          </p>
+        </div>
+
+        {/* Closing Statement */}
+        <div className="p-8 rounded-xl bg-gradient-to-r from-primary/5 to-secondary/5 border border-primary/20 text-center">
+          <p className="text-lg text-foreground italic leading-relaxed">
+            "Diggity turns archaeology into understanding — and understanding into protection."
+          </p>
+        </div>
       </section>
 
       {/* Feature Grid */}
