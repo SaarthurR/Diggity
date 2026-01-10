@@ -22,13 +22,7 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10 max-w-3xl px-6 space-y-6">
-          <div className="inline-block px-3 py-1 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-md mb-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <span className="font-mono text-xs text-primary tracking-widest uppercase">
-              Mission: Protect Human Identity
-            </span>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-white tracking-tight drop-shadow-lg animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-white tracking-tight drop-shadow-lg animate-in fade-in slide-in-from-bottom-6 duration-700">
             Diggity
           </h1>
           
