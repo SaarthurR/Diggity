@@ -105,53 +105,6 @@ export default function RobotExcavationPipeline() {
         </div>
       </div>
 
-      {/* Data Flow to Analyzer */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mt-12"
-      >
-        <div className="relative p-6 rounded-lg bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5 border border-primary/20">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            <div className="flex-1 space-y-2">
-              <h3 className="font-display font-bold text-lg text-foreground">Data Integration Pipeline</h3>
-              <p className="text-sm text-muted-foreground">
-                All collected robot data feeds into the Artifact Analyzer as structured input. The system cross-references material composition, age markers, and spatial data to identify artifact type, civilization, and historical period.
-              </p>
-            </div>
-            <div className="hidden md:flex items-center gap-2 text-primary font-mono text-sm">
-              <Zap className="w-4 h-4" />
-              REAL-TIME TRANSFER
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Key Benefits */}
-      <div className="grid md:grid-cols-2 gap-4">
-        <Card className="bg-green-500/5 border-green-500/20">
-          <CardHeader>
-            <CardTitle className="text-sm font-mono text-green-500 uppercase">Preservation Advantage</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground">
-              Robotic excavation minimizes human contact and environmental disturbance, preserving artifacts in pristine condition for future advanced analysis.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-blue-500/5 border-blue-500/20">
-          <CardHeader>
-            <CardTitle className="text-sm font-mono text-blue-500 uppercase">Data Accuracy</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground">
-              Precise sensors eliminate human measurement error, providing objective data that increases the confidence and reliability of artifact identification.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
     </div>
   );
 }
