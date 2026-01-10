@@ -145,16 +145,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Core Principle */}
-        <div className="p-8 rounded-xl bg-card border border-primary/20 text-center">
-          <p className="text-xl font-display font-bold text-primary">
-            "Understand first. Act second."
-          </p>
-          <p className="text-sm text-muted-foreground mt-3">
-            Every decision is informed. Every action is intentional. This is how we protect history.
-          </p>
-        </div>
-
         {/* Closing Statement */}
         <div className="p-8 rounded-xl bg-gradient-to-r from-primary/5 to-secondary/5 border border-primary/20 text-center">
           <p className="text-lg text-foreground italic leading-relaxed">
