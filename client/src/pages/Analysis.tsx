@@ -83,10 +83,7 @@ export default function Analysis() {
       setMatchedCiv(civ || null);
       
       // Calculate confidence based on input completeness (simulated)
-      let baseConfidence = 85;
-      if (condition === "intact") baseConfidence += 10;
-      if (condition === "fragmented") baseConfidence -= 5;
-      const finalConfidence = Math.min(99, Math.floor(Math.random() * 5 + baseConfidence));
+      const finalConfidence = 90;
       setConfidence(finalConfidence);
       
       // Store in global context for Civilization Explorer
@@ -109,7 +106,7 @@ export default function Analysis() {
     setImagePreview(imageMap[artifact?.imageId || "tablet"]);
     setMatchedArtifact(artifact || null);
     setMatchedCiv(civ || null);
-    setConfidence(100); // Known artifact
+    setConfidence(90); // Known artifact
     setMode("browse");
     
     // Start auto-scan
