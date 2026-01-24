@@ -27,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/">
-            <a className="flex items-center gap-2 group">
+            <div className="flex items-center gap-2 group cursor-pointer">
               <div className="w-8 h-8 rounded bg-primary/20 flex items-center justify-center border border-primary/50 group-hover:bg-primary/30 transition-colors shadow-[0_0_15px_rgba(0,255,255,0.3)]">
                 <Scan className="w-5 h-5 text-primary" />
               </div>
@@ -39,7 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   Digital Archaeologist
                 </p>
               </div>
-            </a>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -49,9 +49,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               const isActive = location === item.href;
               return (
                 <Link key={item.href} href={item.href}>
-                  <a
+                  <div
                     className={cn(
-                      "flex items-center gap-2 px-3 py-2 rounded-md font-mono text-xs transition-all duration-300",
+                      "flex items-center gap-2 px-3 py-2 rounded-md font-mono text-xs transition-all duration-300 cursor-pointer",
                       isActive
                         ? "bg-primary/10 text-primary border border-primary/20 shadow-[0_0_10px_rgba(0,255,255,0.1)]"
                         : "text-muted-foreground hover:text-foreground hover:bg-white/5"
@@ -59,7 +59,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   >
                     <Icon className="w-3 h-3" />
                     {item.label}
-                  </a>
+                  </div>
                 </Link>
               );
             })}
@@ -84,10 +84,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               const isActive = location === item.href;
               return (
                 <Link key={item.href} href={item.href}>
-                  <a
+                  <div
                     onClick={() => setIsMenuOpen(false)}
                     className={cn(
-                      "flex items-center gap-2 px-4 py-3 rounded-md font-mono text-sm",
+                      "flex items-center gap-2 px-4 py-3 rounded-md font-mono text-sm cursor-pointer",
                       isActive
                         ? "bg-primary/10 text-primary border border-primary/20"
                         : "text-muted-foreground hover:text-foreground hover:bg-white/5"
@@ -95,7 +95,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   >
                     <Icon className="w-4 h-4" />
                     {item.label}
-                  </a>
+                  </div>
                 </Link>
               );
             })}
