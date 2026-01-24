@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowLeft, CheckCircle2, MapPin, Clock, Hammer, Upload, Camera, Search, AlertTriangle, ScanLine, ExternalLink } from "lucide-react";
 import { useAnalysis } from "@/context/AnalysisContext";
+import { useToast } from "@/hooks/use-toast";
 import LanguageInsights from "@/components/LanguageInsights";
 import artifactsData from "@/data/artifacts.json";
 import civsData from "@/data/civilizations.json";
@@ -30,12 +31,14 @@ const imageMap: Record<string, string> = {
 export default function Analysis() {
   const [, navigate] = useLocation();
   const { setAnalysisResult } = useAnalysis();
+  const { toast } = useToast();
   
   // Mode Selection: 'browse' (grid) or 'upload' (new scan)
   const [mode, setMode] = useState<"browse" | "upload">("upload");
 
   // Upload/Analyzer State
   const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [uploadStep, setUploadStep] = useState<"upload" | "verify" | "result">("upload");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [material, setMaterial] = useState("");
@@ -49,7 +52,7 @@ export default function Analysis() {
   // Shared Analysis State
   const [isScanning, setIsScanning] = useState(false);
   const [scanComplete, setScanComplete] = useState(false);
-  const [matchedArtifact, setMatchedArtifact] = useState<typeof artifactsData[0] | null>(null);
+  const [matchedArtifact, setMatchedArtifact] = useState<any | null>(null);
   const [matchedCiv, setMatchedCiv] = useState<typeof civsData[0] | null>(null);
 
   // --- Handlers for Upload Mode ---
@@ -58,43 +61,123 @@ export default function Analysis() {
     if (file) {
       const url = URL.createObjectURL(file);
       setImagePreview(url);
+      setSelectedFile(file);
       setUploadStep("verify");
       setMode("upload");
     }
   };
 
-  const handleUploadAnalyze = () => {
+  const handleUploadAnalyze = async () => {
     setIsScanning(true);
     setScanComplete(false);
     
-    setTimeout(() => {
-      // Logic to find a match based on user input tags
-      let match = artifactsData.find(a => 
-        (a.material.toLowerCase().includes(material.toLowerCase())) ||
-        (a.type.toLowerCase().includes(category.toLowerCase()))
-      );
+    // Simulate scanning time for UX
+    // But also allow time for API call
+    
+    if (mode === 'upload' && selectedFile) {
+      try {
+        const reader = new FileReader();
+        const base64Promise = new Promise((resolve, reject) => {
+          reader.onload = (e) => resolve(e.target?.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(selectedFile);
+        });
+        const base64Image = await base64Promise;
 
-      // Fallback
-      if (!match) match = artifactsData[0];
+        const response = await fetch('/api/analyze', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            image: base64Image,
+            material,
+            category,
+            condition
+          })
+        });
 
-      const civ = civsData.find(c => c.id === match?.civilizationId);
+        if (!response.ok) {
+          throw new Error('Analysis service unavailable');
+        }
 
-      setMatchedArtifact(match || null);
-      setMatchedCiv(civ || null);
-      
-      // Calculate confidence based on input completeness (simulated)
-      const finalConfidence = 90;
-      setConfidence(finalConfidence);
-      
-      // Store in global context for Civilization Explorer
-      if (match && civ) {
-        setAnalysisResult(match as any, civ as any);
+        const data = await response.json();
+        
+        // Match civilization loosely
+        const civ = civsData.find(c => 
+          data.civilization?.toLowerCase().includes(c.name.toLowerCase()) || 
+          c.name.toLowerCase().includes(data.civilization?.toLowerCase())
+        ) || civsData[0];
+
+        setMatchedArtifact({
+          id: 'new-scan',
+          name: data.name,
+          age: data.age,
+          material: data.material,
+          purpose: data.purpose,
+          location: data.location,
+          whyItMatters: data.whyItMatters,
+          civilizationId: civ.id,
+          imageId: 'tablet', // Fallback or use uploaded
+          type: category
+        });
+        setMatchedCiv(civ);
+        setConfidence(data.confidence || 90);
+        
+        setAnalysisResult({
+          id: 'new-scan',
+          name: data.name,
+          age: data.age,
+          material: data.material,
+          purpose: data.purpose,
+          location: data.location,
+          whyItMatters: data.whyItMatters,
+          civilizationId: civ.id,
+          type: category
+        }, civ);
+
+        setScanComplete(true);
+        setUploadStep("result");
+
+      } catch (error) {
+        console.error(error);
+        toast({
+          title: "Analysis Failed",
+          description: "Could not connect to the archaeology database. Please try again.",
+          variant: "destructive"
+        });
+      } finally {
+        setIsScanning(false);
       }
-      
-      setIsScanning(false);
-      setScanComplete(true);
-      setUploadStep("result");
-    }, 2500);
+    } else {
+      // Mock mode logic for "Browse"
+      setTimeout(() => {
+        // Logic to find a match based on user input tags
+        let match = artifactsData.find(a => 
+          (a.material.toLowerCase().includes(material.toLowerCase())) ||
+          (a.type.toLowerCase().includes(category.toLowerCase()))
+        );
+
+        // Fallback
+        if (!match) match = artifactsData[0];
+
+        const civ = civsData.find(c => c.id === match?.civilizationId);
+
+        setMatchedArtifact(match || null);
+        setMatchedCiv(civ || null);
+        
+        // Calculate confidence based on input completeness (simulated)
+        const finalConfidence = 90;
+        setConfidence(finalConfidence);
+        
+        // Store in global context for Civilization Explorer
+        if (match && civ) {
+          setAnalysisResult(match as any, civ as any);
+        }
+        
+        setIsScanning(false);
+        setScanComplete(true);
+        setUploadStep("result");
+      }, 2500);
+    }
   };
 
   // --- Handlers for Browse Mode ---
