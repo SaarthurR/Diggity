@@ -96,7 +96,8 @@ export default function Analysis() {
         });
 
         if (!response.ok) {
-          throw new Error('Analysis service unavailable');
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(errorData.message || 'Analysis service unavailable');
         }
 
         const data = await response.json();
@@ -137,11 +138,11 @@ export default function Analysis() {
         setScanComplete(true);
         setUploadStep("result");
 
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
         toast({
           title: "Analysis Failed",
-          description: "Could not connect to the archaeology database. Please try again.",
+          description: error.message || "Could not connect to the archaeology database. Please try again.",
           variant: "destructive"
         });
       } finally {

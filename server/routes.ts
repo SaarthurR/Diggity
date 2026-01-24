@@ -54,9 +54,9 @@ export async function registerRoutes(
 
       const content = JSON.parse(response.choices[0].message.content || "{}");
       res.json(content);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Analysis failed:", error);
-      res.status(500).json({ message: "Analysis failed" });
+      res.status(500).json({ message: error.message || "Analysis failed" });
     }
   });
 
