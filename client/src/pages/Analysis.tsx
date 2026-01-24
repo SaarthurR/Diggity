@@ -152,7 +152,7 @@ export default function Analysis() {
       <div className="grid lg:grid-cols-12 gap-8">
         {/* LEFT COLUMN: Main Interaction Area (Upload or Scan View) */}
         <div className="lg:col-span-7 space-y-6">
-          <Card className="overflow-hidden bg-black/40 border-primary/20 relative min-h-[500px] flex flex-col shadow-2xl">
+          <Card className="overflow-hidden bg-card/40 border-primary/10 relative min-h-[500px] flex flex-col shadow-xl">
             <AnimatePresence mode="wait">
               {!imagePreview ? (
                 /* UPLOAD STATE */
@@ -163,9 +163,9 @@ export default function Analysis() {
                   exit={{ opacity: 0 }}
                   className="flex-1 flex flex-col items-center justify-center p-8 space-y-6 text-center"
                 >
-                  <div className="w-24 h-24 rounded-full bg-primary/5 flex items-center justify-center border border-dashed border-primary/30 relative">
-                    <ScanLine className="w-10 h-10 text-primary/50 animate-pulse" />
-                    <div className="absolute inset-0 rounded-full border-t border-primary/30 animate-spin duration-3000" />
+                  <div className="w-24 h-24 rounded-full bg-primary/5 flex items-center justify-center border border-dashed border-primary/20 relative">
+                    <ScanLine className="w-10 h-10 text-primary/40 animate-pulse" />
+                    <div className="absolute inset-0 rounded-full border-t border-primary/20 animate-spin duration-3000" />
                   </div>
                   
                   <div className="space-y-2">
@@ -190,8 +190,8 @@ export default function Analysis() {
 
                   <div className="pt-8 w-full">
                     <div className="relative">
-                      <div className="absolute inset-0 flex items-center"><span className="w-full border-t border-border" /></div>
-                      <div className="relative flex justify-center text-xs uppercase"><span className="bg-background px-2 text-muted-foreground font-mono">Or select from archive</span></div>
+                      <div className="absolute inset-0 flex items-center"><span className="w-full border-t border-border/50" /></div>
+                      <div className="relative flex justify-center text-xs uppercase"><span className="bg-card/40 px-2 text-muted-foreground font-mono">Or select from archive</span></div>
                     </div>
                     
                     <div className="grid grid-cols-4 gap-4 mt-6">
@@ -199,11 +199,11 @@ export default function Analysis() {
                         <div 
                           key={artifact.id}
                           onClick={() => handleGridSelect(artifact.id)}
-                          className="group cursor-pointer relative aspect-square rounded overflow-hidden border border-border hover:border-primary/50 transition-all"
+                          className="group cursor-pointer relative aspect-square rounded overflow-hidden border border-border/50 hover:border-primary/50 transition-all"
                         >
                           <img src={imageMap[artifact.imageId]} alt={artifact.name} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                          <span className="absolute bottom-1 left-1 text-[10px] font-mono text-white/70">{artifact.name}</span>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                          <span className="absolute bottom-1 left-1 text-[10px] font-mono text-white/90">{artifact.name}</span>
                         </div>
                       ))}
                     </div>
@@ -211,7 +211,7 @@ export default function Analysis() {
                 </motion.div>
               ) : (
                 /* PREVIEW / SCANNING STATE */
-                <motion.div key="scanner" className="relative w-full h-full flex-1 bg-black">
+                <motion.div key="scanner" className="relative w-full h-full flex-1 bg-muted/30">
                    <Scanner 
                       imageUrl={imagePreview} 
                       isScanning={isScanning} 
