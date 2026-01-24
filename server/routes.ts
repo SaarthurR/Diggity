@@ -24,11 +24,6 @@ export async function registerRoutes(
             role: "system",
             content: `You are an expert digital archaeologist AI. Your task is to analyze artifact images and provide detailed, structured archaeological data.
             
-            Context provided by field agent:
-            - Material: ${material}
-            - Category: ${category}
-            - Condition: ${condition}
-
             Return a JSON object with the following fields:
             - name: A specific, academic name for the artifact (e.g., "Sumerian Cuneiform Tablet")
             - age: Estimated age/period (e.g., "c. 2100 BCE")
