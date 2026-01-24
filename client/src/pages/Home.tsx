@@ -2,31 +2,31 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Shield, History, Search, Zap, Brain, Target } from "lucide-react";
 import RobotExcavationPipeline from "@/components/RobotExcavationPipeline";
-import heroBg from "@assets/generated_images/digital_archaeology_interface_background.png";
+import heroBg from "@/assets/generated_images/archaeology_field_notes_bg.png";
 
 export default function Home() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative rounded-3xl overflow-hidden min-h-[500px] flex items-center justify-center text-center border border-primary/20 shadow-[0_0_50px_rgba(0,255,255,0.1)]">
+      <section className="relative rounded-3xl overflow-hidden min-h-[500px] flex items-center justify-center text-center border border-primary/10 shadow-[0_0_50px_rgba(120,80,50,0.05)]">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
             src={heroBg} 
-            alt="Digital Archaeology Interface" 
-            className="w-full h-full object-cover opacity-60"
+            alt="Archaeological Field Notes" 
+            className="w-full h-full object-cover opacity-40 mix-blend-multiply"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
-          <div className="absolute inset-0 hologram-grid opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+          <div className="absolute inset-0 hologram-grid opacity-20" />
         </div>
 
         {/* Content */}
         <div className="relative z-10 max-w-3xl px-6 space-y-6">
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-white tracking-tight drop-shadow-lg animate-in fade-in slide-in-from-bottom-6 duration-700">
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-primary tracking-tight drop-shadow-sm animate-in fade-in slide-in-from-bottom-6 duration-700">
             Diggity
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+          <p className="text-xl md:text-2xl text-foreground font-light leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
             "Understanding yesterday so we can <span className="text-primary font-medium">protect tomorrow</span>."
           </p>
 
