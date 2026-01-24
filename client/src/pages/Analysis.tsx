@@ -321,62 +321,19 @@ export default function Analysis() {
                 <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
                   <CardHeader>
                     <CardTitle className="font-mono text-sm uppercase text-primary flex items-center gap-2">
-                      <Search className="w-4 h-4" /> Calibrate Analysis
+                      <Search className="w-4 h-4" /> Ready to Analyze
                     </CardTitle>
-                    <CardDescription>Select visual tags to assist the recognition algorithm.</CardDescription>
+                    <CardDescription>
+                      The AI will now scan the visual data to identify material, origin, and historical context automatically.
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div className="space-y-2">
-                      <Label>Primary Material</Label>
-                      <Select onValueChange={setMaterial} value={material}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select material..." />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="Clay">Clay / Terracotta</SelectItem>
-                          <SelectItem value="Stone">Stone / Flint</SelectItem>
-                          <SelectItem value="Gold">Gold / Metal</SelectItem>
-                          <SelectItem value="Ceramic">Ceramic / Pottery</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label>Artifact Category</Label>
-                      <Select onValueChange={setCategory} value={category}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select category..." />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="Record">Tablet / Record</SelectItem>
-                          <SelectItem value="Tool">Tool / Weapon</SelectItem>
-                          <SelectItem value="Container">Vase / Container</SelectItem>
-                          <SelectItem value="Religious">Statue / Idol</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label>Visible Condition</Label>
-                      <Select onValueChange={setCondition} value={condition}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select condition..." />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="intact">Intact / Complete</SelectItem>
-                          <SelectItem value="fragmented">Fragmented / Broken</SelectItem>
-                          <SelectItem value="weathered">Weathered / Eroded</SelectItem>
-                          <SelectItem value="restored">Restored</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
                     <Button 
-                      className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90"
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6 text-lg font-display tracking-wide shadow-lg shadow-primary/20"
                       onClick={handleUploadAnalyze}
-                      disabled={!material || !category || !condition || isScanning}
+                      disabled={isScanning}
                     >
-                      {isScanning ? "PROCESSING..." : "RUN ANALYSIS"} <ScanLine className="w-4 h-4 ml-2" />
+                      {isScanning ? "SCANNING ARTIFACT..." : "START ANALYSIS"} <ScanLine className="w-5 h-5 ml-2" />
                     </Button>
                   </CardContent>
                 </Card>
